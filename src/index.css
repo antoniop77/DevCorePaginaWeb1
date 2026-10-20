@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", serif;
+  --font-sans: "Work Sans", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+
+  --color-win-grey: #C0C0C0;
+  --color-win-blue: #000080;
+  --color-win-teal: #008080;
+}
+
+@layer utilities {
+  .win95-outset {
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+  }
+
+  .win95-inset {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+  }
+
+  /* Deeper variant for focus/pressed */
+  .win95-button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+
+  .win95-shadow {
+    box-shadow: inset -1px -1px #000, inset 1px 1px #fff;
+  }
+
+  .pixel-dot-bg {
+    background-image: radial-gradient(#808080 0.5px, transparent 0.5px);
+    background-size: 4px 4px;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-win-grey font-sans text-black;
+  }
+
+  a {
+    @apply text-blue-700 underline;
+  }
+
+  a:hover {
+    @apply text-red-600;
+  }
+}
